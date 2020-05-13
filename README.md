@@ -9,8 +9,6 @@
 > * 开发环境：Microsoft VisualStudio 2019
 > * 开发语言：VB.NET
 
-![cmd-markdown-logo](https://www.zybuluo.com/static/img/logo.png)
-
 除了您现在看到的这个 Cmd Markdown 在线版本，您还可以前往以下网址下载：
 
 ### [Windows/Mac/Linux 全平台客户端](https://www.zybuluo.com/cmd/)
@@ -24,7 +22,10 @@
 ### 1. 当前待办事宜 [预计完成时间：2020.06.30]
 
 - [x] 创建项目
-- [ ] 熟悉github操作
+- [x] 熟悉github操作并在VS中配置插件扩展（Github Extension）
+- [x] 学习Markdown文件格式并在VS中配置编辑器扩展（Markdown Eidter）
+- [ ] 学习在窗口程序中使用code First操作数据库
 - [ ] 完善项目介绍
 - [ ] 推广项目
 - [ ] 思考项目整体方案
+- [ ] 部署策划和完善基本文档方案（长期任务）
