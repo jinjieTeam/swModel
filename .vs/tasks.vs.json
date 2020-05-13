@@ -1,0 +1,10 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskName": "任务-参数化建模",
+      "appliesTo": "/",
+      "type": "launch"
+    }
+  ]
+}
