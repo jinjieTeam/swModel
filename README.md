@@ -6,8 +6,8 @@
 > * 程序类型：窗口应用程序（以exe形式发布）
 > * 运行系统：windows7、windows10
 > * 系统环境：SolidWorks 2016 SP5、.NET FrameWorks 4.0、Microsoft SQL Server 2014
-> * 开发环境：Microsoft VisualStudio 2019
-> * 开发语言：VB.NET
+> * 开发环境：Microsoft VisualStudio 2017
+> * 开发语言：C#
 
 除了您现在看到的这个 Cmd Markdown 在线版本，您还可以前往以下网址下载：
 
