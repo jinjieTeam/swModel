@@ -5,7 +5,7 @@
  
 > * 程序类型：窗口应用程序（以exe形式发布）
 > * 运行系统：windows7、windows10
-> * 系统环境：SolidWorks 2016 SP5、.NET FrameWorks 4.0、Microsoft SQL Server 2014
+> * 系统环境：SolidWorks 2016 SP5、.NET FrameWorks 4.6、Microsoft SQL Server 2014
 > * 开发环境：Microsoft VisualStudio 2017
 > * 开发语言：C#
 
@@ -24,7 +24,7 @@
 - [x] 创建项目
 - [x] 熟悉github操作并在VS中配置插件扩展（Github Extension）
 - [x] 学习Markdown文件格式并在VS中配置编辑器扩展（Markdown Eidter）
-- [ ] 学习在窗口程序中使用code First操作数据库
+- [x] 学习在窗口程序中使用code First操作数据库
 - [ ] 完善项目介绍
 - [ ] 推广项目
 - [ ] 思考项目整体方案
