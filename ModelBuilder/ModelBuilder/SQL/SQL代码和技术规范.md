@@ -130,7 +130,6 @@ namespace ModelBuilder
             
             List<sysInfo> resultList1 = db.sysInfo.ToList();//得到表sysInfo所有记录列表
             List<sysInfo> resultList2 = db.sysInfo.Finde();//得到表sysInfo所有记录列表
-            sysInfo result= db.sysInfo.Find(2);//得到ID=2的记录。请注意此种写法只能查询具有默认主键为ID的表
             List<sysInfo> resultList3 = db.sysInfo.Where(Item => Item.sysName == "系统名称" && Item.sysCreateTime != null).ToList();//使用Lambda表达式作为条件查询
             
             //以下代码更改查询到的result
@@ -155,6 +154,7 @@ namespace ModelBuilder
 }
 
 ```
+查询数据时，可使用各种合法Lambda表达式进行数据筛选，可使用列表（泛型）对象的方法进行灵活的数据处理。
 ### 7. 相关约定
 由于是集体开发项目，我们约定：
 - [x]本项目中仅使用EF的方法来访问数据库，实现业务的增删改查。
