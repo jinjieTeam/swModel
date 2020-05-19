@@ -14,10 +14,10 @@
 ### 1. 什么是Frist Code
 Frist Code是Entity Framework 框架4.1版本之后提供的一种数据库访问方法。该方法允许我们完全使用代码来定义数据库、表，然后自动化来生成数据库和表。
 
-#### 2. 安装Frist Code
+### 2. 安装Frist Code
 在解决方案文件夹右键，点击“管理解决方案的NuGet程序包”，在新窗口中浏览搜索到“EntityFramework”，选择搜索结果的第一个安装即可。
 
-#### 3. 定义数据库连接字符串
+### 3. 定义数据库连接字符串
 数据库连接字符串在项目的App.config文件中定义。
 App.config是一个标准的xml文件，其根节点为`<configuration>`。
 数据库连接字符串使用节点`<connectionStrings>`，该节点为根节点`<configuration>`的字节点。
@@ -39,7 +39,7 @@ connectionString字符串中，按实际情况更改其中的值。
 | User ID          |mbAdmin     |登录数据库的用户名 |在数据库管理工具中设定（数据库必须是混合登录模式），至少具有owner级别的权限
 | Password         |mbAdmin     |登录数据库的用户密码|
 
-#### 4. 定义数据库访问对象
+### 4. 定义数据库访问对象
 所有数据库的访问对象均在ModelBuilder.SQL命名空间中，即在文件夹ModelBuilder/SQL中。
 
 其中Database.cs文件定义了数据库访问上下文对象 myEFContext，通过以下代码实现:
@@ -61,7 +61,7 @@ namespace ModelBuilder.SQL
 ```
 上述代码中，myEFContext类的myEFContext方法需要一个字符串作为参数，该字符串参数将会到App.config文件自动通过节点`<connectionStrings>`获取到对应的数据库连接字符串，然后创建一个数据库数据上下文对象。
 
-#### 5. 定义表对象
+### 5. 定义表对象
 一个表对象均需要在SQL文件夹中创建一个以表名命名的.cs类文件。
 该类文件基本结构示例如下：
 ```csharp
