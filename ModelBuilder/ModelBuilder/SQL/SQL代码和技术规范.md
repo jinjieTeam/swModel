@@ -41,7 +41,25 @@ connectionString字符串中，按实际情况更改其中的值。
 
 #### 4. 定义数据库访问对象
 所有数据库的访问对象均在ModelBuilder.SQL命名空间中，即在文件夹ModelBuilder/SQL中。
-其中
+
+其中Database.cs文件定义了数据库访问上下文对象 myEFContext，通过以下代码实现:
+```csharp
+namespace ModelBuilder.SQL
+{
+    public  class myEFContext : DbContext
+    {
+        public myEFContext()
+        {
+            Database.SetInitializer<myEFContext>(null);//关闭Codefirst对数据库的检测。这样代码只会访问数据，而不会检查数据库结构的更改。避免不需要的警告
+        }
+        public myEFContext(string connectionName)
+            : base(connectionName) { }
+        public DbSet<sysInfo> sysInfo { get; set; }
+    }
+}
+
+```
+上述代码中，myEFContext类的myEFContext方法需要一个字符串作为参数，该字符串参数将会到App.config文件自动通过节点`<connectionStrings>`获取到对应的数据库连接字符串，然后创建一个数据库数据上下文对象。
 
 #### 5. 定义表对象
 一个表对象均需要在SQL文件夹中创建一个以表名命名的.cs类文件。
