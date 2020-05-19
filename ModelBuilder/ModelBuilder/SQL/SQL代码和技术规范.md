@@ -129,7 +129,7 @@ namespace ModelBuilder
             myEFContext db = new myEFContext("HPMD");//通过定义数据库连接字符串创建数据库连接对象
             
             List<sysInfo> resultList1 = db.sysInfo.ToList();//得到表sysInfo所有记录列表
-            List<sysInfo> resultList2 = db.sysInfo.Finde();//得到表sysInfo所有记录列表
+           
             List<sysInfo> resultList3 = db.sysInfo.Where(Item => Item.sysName == "系统名称" && Item.sysCreateTime != null).ToList();//使用Lambda表达式作为条件查询
             
             //以下代码更改查询到的result
