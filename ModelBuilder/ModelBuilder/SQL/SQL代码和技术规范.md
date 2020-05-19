@@ -7,7 +7,7 @@
 > * 访问机制：Entity Framework（简称EF）
 > * 命名空间：ModelBuilder.SQL
 
-[可点此链接完整学习EF技术](https://www.cnblogs.com/caofangsheng/p/5020541.html)
+[可点此链接，了解EF相关技术知识](https://www.cnblogs.com/caofangsheng/p/5020541.html)
 
 
 
@@ -40,7 +40,7 @@ connectionString字符串中，按实际情况更改其中的值。
 | Password         |mbAdmin     |登录数据库的用户密码|
 
 ### 4. 定义数据库访问对象
-所有数据库的访问对象均在ModelBuilder.SQL命名空间中，即在文件夹ModelBuilder/SQL中。
+所有数据库的访问对象均在ModelBuilder.SQL命名空间中，即在文件夹ModelBuilder\SQL中。
 
 其中Database.cs文件定义了数据库访问上下文对象 myEFContext，通过以下代码实现:
 ```csharp
@@ -99,7 +99,7 @@ namespace ModelBuilder.SQL
 > * 尽量避免在类中进行逻辑处理，除非具有内在的逻辑联系。
 > * 在每一列可注释其表示的含义。
 > * 不在数据表中映射的属性，使用`[NotMapped]`修饰词说明。
-> * 更多的修饰词请
+
 
 **【请注意】任一表还必须在Database.cs文件中的类myEFContext中类似于使用`public DbSet<sysInfo> sysInfo { get; set; }`代码说明是其中的表**
 
