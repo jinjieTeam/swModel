@@ -14,7 +14,8 @@ namespace ModelBuilder.sys
     /// </summary>
     public static class SysSec
     {
- 
+        public static string connectionString; 
+
         public static Dictionary<string, string> ReadSetInReg()
         {
 
@@ -221,7 +222,7 @@ namespace ModelBuilder.sys
         /// <returns>只检查输入，不验证连接</returns>
         public static bool CheckdbInput(string dbSvrName, string dbName, string dbUserName, string dbUserPwd)
         {
-
+            //return false;
             Dictionary<string, string> SetDict = new Dictionary<string, string>();
 
             if (string.IsNullOrWhiteSpace(dbSvrName) == false)
@@ -264,6 +265,10 @@ namespace ModelBuilder.sys
                 MessageBox.Show("请输入可正确访问的数据库用户密码");
                 return false;
             }
+           connectionString = "Data Source=" + dbSvrName + 
+                "; Initial Catalog=" + dbName + "; Persist Security Info=False;User ID=" +
+                dbUserName +"; Password=" + dbUserPwd +"; ";
+
             return true;
         }
     }

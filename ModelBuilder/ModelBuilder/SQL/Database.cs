@@ -13,9 +13,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ModelBuilder.SQL
 {
-    public  class myEFContext : DbContext
+    public class myEFContext : DbContext
     {
+
         public myEFContext()
+            : base(sys.SysSec.connectionString)
         {
             Database.SetInitializer<myEFContext>(null);//关闭Codefirst对数据库的检测。这样代码只会访问数据，而不会检查数据库结构的更改。避免不需要的警告
 
@@ -30,9 +32,12 @@ namespace ModelBuilder.SQL
 
             //策略四：从不创建数据库
             //Database.SetInitializer<testContext>(null);
+
+            //Database.SetInitializer<myEFContext>(new MigrateDatabaseToLatestVersion<myEFContext, Configuration>());
+            
         }
-        public myEFContext(string connectionName)
-            : base(connectionName) { }
+
+
 
         public DbSet<sysInfo> sysInfo { get; set; }
     }

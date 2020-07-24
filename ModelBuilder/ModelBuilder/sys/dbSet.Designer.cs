@@ -63,7 +63,7 @@
             this.groupBox3.Margin = new System.Windows.Forms.Padding(6);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(6);
-            this.groupBox3.Size = new System.Drawing.Size(536, 135);
+            this.groupBox3.Size = new System.Drawing.Size(398, 274);
             this.groupBox3.TabIndex = 101;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "数据库配置";
@@ -72,7 +72,7 @@
             // 
             this.button9.BackColor = System.Drawing.Color.Black;
             this.button9.ForeColor = System.Drawing.Color.White;
-            this.button9.Location = new System.Drawing.Point(249, 92);
+            this.button9.Location = new System.Drawing.Point(105, 231);
             this.button9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(85, 38);
@@ -85,7 +85,7 @@
             // 
             this.button10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button10.ForeColor = System.Drawing.Color.White;
-            this.button10.Location = new System.Drawing.Point(342, 92);
+            this.button10.Location = new System.Drawing.Point(198, 231);
             this.button10.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(85, 38);
@@ -98,7 +98,7 @@
             // 
             this.button11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button11.ForeColor = System.Drawing.Color.White;
-            this.button11.Location = new System.Drawing.Point(435, 92);
+            this.button11.Location = new System.Drawing.Point(291, 231);
             this.button11.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(85, 38);
@@ -109,17 +109,17 @@
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(377, 57);
+            this.textBox5.Location = new System.Drawing.Point(108, 138);
             this.textBox5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox5.Name = "textBox5";
             this.textBox5.PasswordChar = '*';
-            this.textBox5.Size = new System.Drawing.Size(143, 26);
+            this.textBox5.Size = new System.Drawing.Size(241, 26);
             this.textBox5.TabIndex = 9;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(311, 60);
+            this.label2.Location = new System.Drawing.Point(42, 141);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(51, 20);
             this.label2.TabIndex = 8;
@@ -127,16 +127,16 @@
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(108, 57);
+            this.textBox6.Location = new System.Drawing.Point(108, 104);
             this.textBox6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(164, 26);
+            this.textBox6.Size = new System.Drawing.Size(241, 26);
             this.textBox6.TabIndex = 7;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(37, 60);
+            this.label13.Location = new System.Drawing.Point(37, 107);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(65, 20);
             this.label13.TabIndex = 6;
@@ -146,7 +146,7 @@
             // 
             this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(160, 91);
+            this.button6.Location = new System.Drawing.Point(13, 231);
             this.button6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(85, 38);
@@ -157,16 +157,16 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(377, 28);
+            this.textBox4.Location = new System.Drawing.Point(108, 62);
             this.textBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(143, 26);
+            this.textBox4.Size = new System.Drawing.Size(241, 26);
             this.textBox4.TabIndex = 3;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(278, 31);
+            this.label14.Location = new System.Drawing.Point(9, 65);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(93, 20);
             this.label14.TabIndex = 2;
@@ -177,7 +177,7 @@
             this.textBox11.Location = new System.Drawing.Point(108, 28);
             this.textBox11.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(164, 26);
+            this.textBox11.Size = new System.Drawing.Size(241, 26);
             this.textBox11.TabIndex = 1;
             // 
             // label16
@@ -193,7 +193,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(561, 155);
+            this.ClientSize = new System.Drawing.Size(423, 300);
             this.Controls.Add(this.groupBox3);
             this.Name = "dbSet";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
