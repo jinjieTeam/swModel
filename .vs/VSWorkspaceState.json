@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\ModelBuilder",
+    "\\ModelBuilder\\ModelBuilder",
+    "\\ModelBuilder\\ModelBuilder\\SQL"
   ],
-  "SelectedNode": "\\.gitattributes",
+  "SelectedNode": "\\ModelBuilder\\ModelBuilder\\SQL\\Database.cs",
   "PreviewInSolutionExplorer": false
 }

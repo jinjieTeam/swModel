@@ -67,6 +67,20 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SQL\Database.cs" />
     <Compile Include="SQL\sysInfo.cs" />
+    <Compile Include="sys\dbSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sys\dbSet.Designer.cs">
+      <DependentUpon>dbSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sys\DealReg.cs" />
+    <Compile Include="sys\sysSec.cs" />
+    <Compile Include="sys\SysSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sys\SysSet.Designer.cs">
+      <DependentUpon>SysSet.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -79,6 +93,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="sys\dbSet.resx">
+      <DependentUpon>dbSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sys\SysSet.resx">
+      <DependentUpon>SysSet.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -92,7 +112,9 @@
     <None Include="SQL\SQL代码和技术规范.md" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
