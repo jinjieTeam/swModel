@@ -20,7 +20,7 @@ namespace ModelBuilder.SQL
             : base(sys.SysSec.connectionString)
         {
             Database.SetInitializer<myEFContext>(null);//关闭Codefirst对数据库的检测。这样代码只会访问数据，而不会检查数据库结构的更改。避免不需要的警告
-
+            
             //策略一：数据库不存在时重新创建数据库
             //Database.SetInitializer<testContext>(new CreateDatabaseIfNotExists<testContext>());
 
@@ -34,7 +34,7 @@ namespace ModelBuilder.SQL
             //Database.SetInitializer<testContext>(null);
 
             //Database.SetInitializer<myEFContext>(new MigrateDatabaseToLatestVersion<myEFContext, Configuration>());
-            
+
         }
 
 

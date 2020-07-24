@@ -94,7 +94,7 @@ namespace ModelBuilder
                 try
                 {
                     //测试数据库连接
-                    if (sys.SysSec.CheckdbInput(SetDict1["1"], SetDict1["2"], SetDict1["3"], SetDict1["4"]) == true)
+                    if (sys.SysSec.CheckdbCon(SetDict1["1"], SetDict1["2"], SetDict1["3"], SetDict1["4"]) == true)
                     {
                         b1 = true;
                     }
@@ -128,7 +128,7 @@ namespace ModelBuilder
             try
             {
                 //测试数据库连接
-                if (sys.SysSec.CheckdbInput(SetDict2["1"], SetDict2["2"], SetDict2["3"], SetDict2["4"]) ==true)
+                if (sys.SysSec.CheckdbCon(SetDict2["1"], SetDict2["2"], SetDict2["3"], SetDict2["4"]) ==true)
                 {
                     b2 = true;
                     //把数据写入配置文件

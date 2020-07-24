@@ -25,7 +25,7 @@ namespace ModelBuilder.sys
             string dbUserPwd = textBox5.Text;
 
             //测试数据库连接
-            if (sys.SysSec.CheckdbInput(dbSvrName, dbName, dbUserName, dbUserPwd) == false)
+            if (sys.SysSec.CheckdbCon(dbSvrName, dbName, dbUserName, dbUserPwd) == false)
             {
                 return;
             }
@@ -67,7 +67,7 @@ namespace ModelBuilder.sys
                       textBox5.Text = SetDict["4"];
 
                     //测试数据库连接
-                    if (sys.SysSec.CheckdbInput(textBox11.Text, textBox4.Text, textBox6.Text, textBox5.Text) == false)
+                    if (sys.SysSec.CheckdbCon(textBox11.Text, textBox4.Text, textBox6.Text, textBox5.Text) == false)
                     {
                         return;
                     }
@@ -91,7 +91,7 @@ namespace ModelBuilder.sys
             string dbUserPwd = textBox5.Text;
 
             //测试数据库连接
-            if (sys.SysSec.CheckdbInput(dbSvrName, dbName, dbUserName, dbUserPwd) == false)
+            if (sys.SysSec.CheckdbCon(dbSvrName, dbName, dbUserName, dbUserPwd) == false)
             {
                 return;
             }
@@ -111,7 +111,7 @@ namespace ModelBuilder.sys
             string dbUserPwd = textBox5.Text;
 
             //测试数据库连接
-            if (sys.SysSec.CheckdbInput(dbSvrName, dbName, dbUserName, dbUserPwd) == false)
+            if (sys.SysSec.CheckdbCon(dbSvrName, dbName, dbUserName, dbUserPwd) == false)
             {
                 return;
             }

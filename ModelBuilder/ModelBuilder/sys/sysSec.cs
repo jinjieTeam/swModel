@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ModelBuilder.SQL;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -267,9 +268,32 @@ namespace ModelBuilder.sys
             }
            connectionString = "Data Source=" + dbSvrName + 
                 "; Initial Catalog=" + dbName + "; Persist Security Info=False;User ID=" +
-                dbUserName +"; Password=" + dbUserPwd +"; ";
+                dbUserName +"; Password=" + dbUserPwd + "; Connect Timeout=3";
 
             return true;
+        }
+        /// <summary>
+        /// 检查数据库连接
+        /// </summary>
+        /// <returns>成功连接返回true</returns>
+        public static bool CheckdbCon(string dbSvrName, string dbName, string dbUserName, string dbUserPwd)
+        {
+            if (CheckdbInput(dbSvrName, dbName, dbUserName, dbUserPwd)==false)
+            {
+                return false;
+            }
+            try
+            {
+                myEFContext db = new myEFContext();
+               int n= db.Database.ExecuteSqlCommand("SELECT 1");
+                
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
         }
     }
 }
