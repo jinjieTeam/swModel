@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -15,7 +16,14 @@ namespace ModelBuilder.sys
     /// </summary>
     public static class SysSec
     {
-        public static string connectionString; 
+        public static string connectionString;
+        public static string dbSvrName;
+        public static string dbName;
+        public static string dbUserName;
+        public static string dbUserPwd;
+        public static string sysName;
+        public static string companyName;
+
 
         public static Dictionary<string, string> ReadSetInReg()
         {
@@ -285,8 +293,15 @@ namespace ModelBuilder.sys
             try
             {
                 myEFContext db = new myEFContext();
-               int n= db.Database.ExecuteSqlCommand("SELECT 1");
-                
+                int n= db.Database.ExecuteSqlCommand("SELECT 1");
+
+                //数据库
+
+                SysSec.dbSvrName = dbSvrName;
+                SysSec.dbName = dbName;
+                SysSec.dbUserName = dbUserName;
+                SysSec.dbUserPwd = dbUserPwd;
+
                 return true;
             }
             catch (Exception ex)
@@ -294,6 +309,21 @@ namespace ModelBuilder.sys
                 MessageBox.Show(ex.Message);
                 return false;
             }
+        }
+
+
+        /// <summary>
+        /// 把一个字符串按MD5加密
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
+        public static string StringSec(string s)
+        {
+            MD5CryptoServiceProvider mycecWay = new System.Security.Cryptography.MD5CryptoServiceProvider();
+
+           string t= BitConverter.ToString(mycecWay.ComputeHash(System.Text.Encoding.UTF8.GetBytes(s)));
+            t = t.Replace("-", "");         
+            return t;
         }
     }
 }

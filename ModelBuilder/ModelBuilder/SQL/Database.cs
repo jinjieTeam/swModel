@@ -40,6 +40,7 @@ namespace ModelBuilder.SQL
 
 
         public DbSet<sysInfo> sysInfo { get; set; }
+        public DbSet<User> Users { get; set; }
     }
 
 }

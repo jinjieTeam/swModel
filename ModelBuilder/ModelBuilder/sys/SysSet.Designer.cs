@@ -124,6 +124,7 @@
             this.Button5.TabIndex = 99;
             this.Button5.Text = "保存";
             this.Button5.UseVisualStyleBackColor = false;
+            this.Button5.Click += new System.EventHandler(this.Button5_Click);
             // 
             // groupBox3
             // 
@@ -650,6 +651,8 @@
             this.Name = "SysSet";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "系统配置";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SysSet_FormClosing);
+            this.Load += new System.EventHandler(this.SysSet_Load);
             this.TabControl1.ResumeLayout(false);
             this.TabPage1.ResumeLayout(false);
             this.TabPage1.PerformLayout();
