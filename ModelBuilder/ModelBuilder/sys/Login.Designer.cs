@@ -139,6 +139,7 @@
             this.Button1.TabIndex = 4;
             this.Button1.Text = "登录";
             this.Button1.UseVisualStyleBackColor = false;
+            this.Button1.Click += new System.EventHandler(this.Button1_Click);
             this.Button1.MouseLeave += new System.EventHandler(this.Button1_MouseLeave);
             this.Button1.MouseHover += new System.EventHandler(this.Button1_MouseHover);
             // 

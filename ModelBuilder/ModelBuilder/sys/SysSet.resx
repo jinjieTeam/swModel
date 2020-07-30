@@ -122,7 +122,13 @@
 2.选中用户后，点击“删除用户”按钮删除用户
 3.编辑用户信息，不更改用户名，点击“修改用户信息”按钮修改用户信息
 4.编辑用户信息，保证用户名和当前任何用户名不一致，点击“新增用户”增加用户，新增用户密码默认为和用户名完全一致
-5.admin用户是内置管理员，无法删除，不能更改权限
-6.权限说明：0 管理员（可访问本窗口），1普通用户，-1限制用户（不能登录系统 ）</value>
+5.admin用户是内置管理员，无法删除，不能更改权限，但可以修改密码
+6.权限说明：0 管理员（可访问本窗口），1普通用户</value>
   </data>
+  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>

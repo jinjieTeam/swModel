@@ -1,6 +1,6 @@
 ﻿namespace ModelBuilder
 {
-    partial class Form1
+    partial class mian
     {
         /// <summary>
         /// 必需的设计器变量。
@@ -104,7 +104,8 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "主窗口";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

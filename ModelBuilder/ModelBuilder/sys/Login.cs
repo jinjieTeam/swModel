@@ -159,7 +159,7 @@ namespace ModelBuilder.sys
                 {
                     b1 = false;
                 }
-                //
+                 
             }
             if (b1 == true)
             {
@@ -238,6 +238,77 @@ namespace ModelBuilder.sys
         private void Login_Load(object sender, EventArgs e)
         {
             LoadData();
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            //检查登录
+            string yhm =  TextBox1.Text;
+            string mima = TextBox4.Text;
+
+            if (string.IsNullOrEmpty(yhm) | string.IsNullOrEmpty(mima))
+            {
+                MessageBox.Show(this,"用户名或者密码为空，请检查。系统不允许用户使用空密码。", 
+                    "用户名或密码不能为空",MessageBoxButtons.OK);
+                return;
+            }
+
+            //检查用户名
+            myEFContext db = new myEFContext();
+ 
+            User user = db.Users.FirstOrDefault(t => t.UserLoginName.ToUpper() == yhm.ToUpper());
+
+            if (user==null)
+            {
+                MessageBox.Show(this, "未找到用户名，请检查。用户名一般为姓名全拼，请联系管理员添加。",
+                 "用户名不存在", MessageBoxButtons.OK);
+                return;
+            }
+            //检查用户密码
+            if (user.UserPassword!=sys.SysSec.StringSec(mima))
+            {
+                MessageBox.Show(this, "用户密码不配对。",
+                "密码错误", MessageBoxButtons.OK);
+                return;
+            }
+
+            if (user.Enable ==false )
+            {
+                MessageBox.Show(this, "用户已经被禁止登录，请联系管理员", "警告",MessageBoxButtons.OK);
+                return;
+            }
+
+
+            //更新登录信息
+
+            user.LastLoginTime = DateTime.Now;
+            db.SaveChanges();
+
+            PublicVar.UserLoginName = user.UserLoginName;
+            PublicVar.UserName = user.UserName;
+
+            //记住用户
+            if (CheckBox1.Checked == true)
+            {
+                PublicVar.SetUserName(yhm);
+            }
+            else
+            {
+                PublicVar.SetUserName("");
+            }
+
+            if (user.Level==0)
+            {
+            Form SysSet = new sys.SysSet();
+            SysSet.ShowDialog();
+            this.Close();
+ 
+            }
+            Form mian = new mian();
+            mian.ShowDialog();
+            this.Close();
+
+
         }
     }
 }

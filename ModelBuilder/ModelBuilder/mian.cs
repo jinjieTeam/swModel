@@ -15,9 +15,9 @@ using ModelBuilder.SQL;
 
 namespace ModelBuilder
 {
-    public partial class Form1 : Form
+    public partial class mian : Form
     {
-        public Form1()
+        public mian()
         {
             InitializeComponent();
         }
@@ -115,6 +115,7 @@ namespace ModelBuilder
             //如果数据出错，继续尝试从注册表中读取数据
             Dictionary<string, string> SetDict2 = new Dictionary<string, string>();
             bool b2 = false;
+
             SetDict2 = sys.SysSec.ReadSetInReg();
 
             if (SetDict2 == null)
