@@ -2,9 +2,7 @@
   "ExpandedNodes": [
     "",
     "\\ModelBuilder",
-    "\\ModelBuilder\\ModelBuilder",
     "\\ModelBuilder\\ModelBuilder\\SQL"
   ],
-  "SelectedNode": "\\ModelBuilder\\ModelBuilder\\SQL\\Database.cs",
   "PreviewInSolutionExplorer": false
 }

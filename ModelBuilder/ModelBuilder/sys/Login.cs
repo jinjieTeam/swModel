@@ -296,14 +296,17 @@ namespace ModelBuilder.sys
             {
                 PublicVar.SetUserName("");
             }
+            this.Visible = false;
 
-            if (user.Level==0)
+            if (user.Level == 0)
             {
-            Form SysSet = new sys.SysSet();
-            SysSet.ShowDialog();
-            this.Close();
- 
+
+                Form SysSet = new sys.SysSet();
+                SysSet.ShowDialog();
+                this.Close();
+
             }
+
             Form mian = new mian();
             mian.ShowDialog();
             this.Close();

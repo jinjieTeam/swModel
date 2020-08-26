@@ -22,54 +22,7 @@ namespace ModelBuilder
             InitializeComponent();
         }
 
-        private void Button1_Click(object sender, EventArgs e)
-        {
-            //myEFContext db = new myEFContext("HPMD");
-            myEFContext db = new myEFContext();
-            
 
-            List<sysInfo> resultList = db.sysInfo.ToList();
-
-            sysInfo result = db.sysInfo.Find(2);
-
-            List<sysInfo> resultList2 = db.sysInfo.Where(Item => Item.sysName == "系统名称" && Item.sysCreateTime != null).ToList();
-
-            foreach (sysInfo item in resultList)
-            {
-                textBox1.AppendText(System.Environment.NewLine + item.sysName);
-
-            }
-
-
-            //db.Entry(result).State = System.Data.Entity.EntityState.Modified;
-            //db.SaveChanges();
-
-
-
-            //sysInfo result;
-
-            //result = new sysInfo();
-            //result.sysName = "test";
-            //result.sysVersion = "1";
-            //result.sysCreateTime = DateTime.Now;
-            //result.sysDeadTime = DateTime.Now;
-            //result.companyName = "rrrr";
-
-            //db.sysInfo.Add(result);
-            //db.SaveChanges();
-            //MessageBox.Show(result.ID.ToString());
-        }
-
-        private void Button2_Click(object sender, EventArgs e)
-        {
-            textBox2.Text = sys.SysSec.SetSec(textBox1.Text, checkBox1.Checked);
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            textBox1.Text = sys.SysSec.GetSec(textBox2.Text, checkBox1.Checked);
-        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
