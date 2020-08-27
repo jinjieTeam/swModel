@@ -21,95 +21,34 @@ namespace ModelBuilder
         {
             InitializeComponent();
         }
-
-
-
+         
+        
         private void Form1_Load(object sender, EventArgs e)
         {
-            //获取配置文件数据
+            //pictureBox_1.Image = Properties.Resources.朝上按钮;//设置图像信息
+            //pictureBox_2.Image = Properties.Resources.朝上按钮;//设置图像信息
+            //pictureBox_3.Image = Properties.Resources.朝上按钮;//设置图像信息
+            //Var_Font = label_1.Font;//得到字体对象
+ 
+            TreeView treeView1 = new TreeView();
+            //treeView1.Location = new Point(20,30);
 
-            string iniPath = Application.StartupPath;
-            if (iniPath.EndsWith(@"\") == false)
+            treeView1.Dock = DockStyle.Fill;
+            treeView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            
+           
+            treeView1.Name = "treeView1";
+            treeView1.ShowLines = false;
+            for (int i = 0; i < 100; i++)
             {
-                iniPath = iniPath + @"\";
+                treeView1.Nodes.Add("测试" + i.ToString());
             }
-            iniPath = iniPath + "setting.ini";
-            Dictionary<string, string> SetDict1 = new Dictionary<string, string>();
-
-            bool b1 = false;
-            if (File.Exists(iniPath) == true)
-            {
-                SetDict1 = sys.SysSec.ReadSetInIni();
-                if (SetDict1 == null)
-                {
-                    b1 = false;
-                }
-                try
-                {
-                    //测试数据库连接
-                    if (sys.SysSec.CheckdbCon(SetDict1["1"], SetDict1["2"], SetDict1["3"], SetDict1["4"]) == true)
-                    {
-                        b1 = true;
-                    }
-                }
-                catch (Exception)
-                {
-                    b1 = false;
-                }
-                //
-            }
-            if (b1 == true)
-            {
-                //把数据写入注册表
-
-                sys.SysSec.SaveSetInReg(SetDict1["1"], SetDict1["2"], SetDict1["3"], SetDict1["4"]);
-                return;
-            }
-            //如果数据出错，继续尝试从注册表中读取数据
-            Dictionary<string, string> SetDict2 = new Dictionary<string, string>();
-            bool b2 = false;
-
-            SetDict2 = sys.SysSec.ReadSetInReg();
-
-            if (SetDict2 == null)
-            {
-                b2 = false;
-                MessageBox.Show("数据库配置错误，转入配置界面");
-                Form dbset = new sys.dbSet();
-
-                dbset.ShowDialog();
-            }
-            try
-            {
-                //测试数据库连接
-                if (sys.SysSec.CheckdbCon(SetDict2["1"], SetDict2["2"], SetDict2["3"], SetDict2["4"]) ==true)
-                {
-                    b2 = true;
-                    //把数据写入配置文件
-                    sys.SysSec.SaveSetInIni(SetDict2["1"], SetDict2["2"], SetDict2["3"], SetDict2["4"]);
-                }
-                else
-                {
-                    b1 = false;
-                    b2 = false;
-                    MessageBox.Show("数据库配置错误，转入配置界面");
-                    Form dbset = new sys.dbSet();
-
-                    dbset.ShowDialog();
-                }
-            }
-            catch (Exception)
-            {
-                b1 = false;
-                b2 = false;
-                MessageBox.Show("数据库配置错误，转入配置界面");
-                Form dbset = new sys.dbSet();
-
-                dbset.ShowDialog();
-            }
+           
 
 
-
+           xPanderPanel1.Controls.Add(treeView1);
         }
+ 
+       
     }
 }

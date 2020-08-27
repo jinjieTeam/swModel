@@ -18,6 +18,8 @@ namespace ModelBuilder
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Login());
+            //测试主界面
+            //Application.Run(new mian());
         }
     }
 }
