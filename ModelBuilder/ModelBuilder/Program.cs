@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ModelBuilder
+namespace ModelBuilder.Forms
 {
     static class Program
     {
@@ -17,9 +17,10 @@ namespace ModelBuilder
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
+            //Application.Run(new Login());
             //测试主界面
-            //Application.Run(new mian());
+            Application.Run(new Mian());
         }
+
     }
 }

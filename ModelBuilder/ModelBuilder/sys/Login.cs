@@ -1,4 +1,5 @@
-﻿using ModelBuilder.SQL;
+﻿using ModelBuilder.Forms;
+using ModelBuilder.SQL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,6 +9,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -24,7 +26,7 @@ namespace ModelBuilder.sys
         public Login()
         {
             InitializeComponent();
-           
+
 
         }
 
@@ -48,7 +50,7 @@ namespace ModelBuilder.sys
 
             try
             {
-               
+
                 Label2.Text = "登录到" + SysSec.sysName;
                 Label3.Text = SysSec.companyName + "版权所有" + Environment.NewLine + "COPYRIGHT@(2020 - 2023)";
 
@@ -74,7 +76,7 @@ namespace ModelBuilder.sys
             }
             catch (Exception ex)
             {
-                MessageBox.Show (ex.Message);
+                MessageBox.Show(ex.Message);
             }
 
         }
@@ -97,8 +99,8 @@ namespace ModelBuilder.sys
                 SysSec.sysName = sysInfo.sysName;
             }
 
-            n = db.Users.Where (t => t.UserLoginName.ToLower() == "admin").Count();
-            if (n==0)
+            n = db.Users.Where(t => t.UserLoginName.ToLower() == "admin").Count();
+            if (n == 0)
             {
                 User adminUser = new User
                 {
@@ -110,7 +112,7 @@ namespace ModelBuilder.sys
                     remark = "系统内置管理员，不能删除",
                     UserCreateTime = DateTime.Now,
                     LastLoginTime = null
-                  
+
                 };
 
                 db.Users.Add(adminUser);
@@ -124,7 +126,7 @@ namespace ModelBuilder.sys
 
 
             }
-          
+
         }
 
         public void CheckSet()
@@ -159,7 +161,7 @@ namespace ModelBuilder.sys
                 {
                     b1 = false;
                 }
-                 
+
             }
             if (b1 == true)
             {
@@ -243,38 +245,38 @@ namespace ModelBuilder.sys
         private void Button1_Click(object sender, EventArgs e)
         {
             //检查登录
-            string yhm =  TextBox1.Text;
+            string yhm = TextBox1.Text;
             string mima = TextBox4.Text;
 
             if (string.IsNullOrEmpty(yhm) | string.IsNullOrEmpty(mima))
             {
-                MessageBox.Show(this,"用户名或者密码为空，请检查。系统不允许用户使用空密码。", 
-                    "用户名或密码不能为空",MessageBoxButtons.OK);
+                MessageBox.Show(this, "用户名或者密码为空，请检查。系统不允许用户使用空密码。",
+                    "用户名或密码不能为空", MessageBoxButtons.OK);
                 return;
             }
 
             //检查用户名
             myEFContext db = new myEFContext();
- 
+
             User user = db.Users.FirstOrDefault(t => t.UserLoginName.ToUpper() == yhm.ToUpper());
 
-            if (user==null)
+            if (user == null)
             {
                 MessageBox.Show(this, "未找到用户名，请检查。用户名一般为姓名全拼，请联系管理员添加。",
                  "用户名不存在", MessageBoxButtons.OK);
                 return;
             }
             //检查用户密码
-            if (user.UserPassword!=sys.SysSec.StringSec(mima))
+            if (user.UserPassword != sys.SysSec.StringSec(mima))
             {
                 MessageBox.Show(this, "用户密码不配对。",
                 "密码错误", MessageBoxButtons.OK);
                 return;
             }
 
-            if (user.Enable ==false )
+            if (user.Enable == false)
             {
-                MessageBox.Show(this, "用户已经被禁止登录，请联系管理员", "警告",MessageBoxButtons.OK);
+                MessageBox.Show(this, "用户已经被禁止登录，请联系管理员", "警告", MessageBoxButtons.OK);
                 return;
             }
 
@@ -306,12 +308,23 @@ namespace ModelBuilder.sys
                 this.Close();
 
             }
+            else
+            {
+                Thread th = new Thread(new ThreadStart(StartMainForm));
+                th.Start();
+                this.Close();
+            }
 
-            Form mian = new mian();
-            mian.ShowDialog();
-            this.Close();
 
-
+        }
+        /// <summary>
+        /// 重新启动登录界面
+        /// </summary>
+        [STAThread]
+        private static void StartMainForm()
+        {
+            Mian mian = new Mian();
+            Application.Run(mian);
         }
     }
 }
